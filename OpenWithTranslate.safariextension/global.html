@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title></title>
+    
+    <script>
+
+        safari.application.addEventListener('command', handleCommand, false);
+
+        function handleCommand(event) 
+        {
+            if(event.command === 'menuOpenClicked') 
+            {
+                var currentUrl = safari.application.activeBrowserWindow.activeTab.url;
+                var sourceLanguage = 'auto';
+
+                var translatedUrl = 'https://translate.google.com/translate?sl=' + sourceLanguage + '&u=' + currentUrl;                
+                safari.application.openBrowserWindow().activeTab.url = translatedUrl;
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
